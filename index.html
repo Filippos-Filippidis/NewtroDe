@@ -1,18 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Newtro Design</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="/css/styles.css">
+  <meta charset="UTF-8" />
+  <title>Newtro - 3D Scanning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <a href="mailto:info@newtrode.com">
-        <picture>
-            <source type="image/png" srcset="images/newtro-21.png" media="(max-width:768px)">
-            <img class="center one" src="images/newtro-20.png" alt="">
-        </picture>
-    </a>
+    <div class="page-container">
+        <header>
+        <div class="nav-inner">
+            <div class="logo">
+            <span>NEWTRO</span> Studio
+            </div>
+            <nav>
+            <a href="#benefits">Benefits</a>
+            <a href="#process">Process</a>
+            <a href="#use-cases">Use Cases</a>
+            </nav>
+            <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            Book a scan
+            </button>
+        </div>
+        </header>
+
+        <main>
+            <!-- HERO with three.js canvas -->
+            <section class="hero" id="top">
+            <canvas id="hero-canvas"></canvas>
+            <div class="hero-overlay" data-parallax data-parallax-speed="0.2">
+                <div class="hero-topline">Built Environment &nbsp;•&nbsp; 3D Scanning</div>
+                <h1 class="hero-title">
+                High-fidelity <span class="hero-highlight">3D scanning</span> for the urban environment.
+                </h1>
+                <p class="hero-subtitle">
+                We capture precise digital twins of villas and small-scale buildings across the country
+                using lidar, photogrammetry and drones — ready for architects, engineers and contractors.
+                </p>
+                <div class="hero-ctas">
+                    <button class="primary-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                        Book a scan
+                    </button>
+                    <button class="ghost-btn" onclick="document.getElementById('process').scrollIntoView({behavior:'smooth'})">
+                        View workflow
+                    </button>
+                </div>
+
+                <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <label>Geographic scope</label>
+                    <span>National coverage</span>
+                </div>
+                <div class="hero-meta-item">
+                    <label>Typical project</label>
+                    <span>Standalone villas &amp; small complexes</span>
+                </div>
+                <div class="hero-meta-item">
+                    <label>Capture methods</label>
+                    <span>Lidar • Drone • Photogrammetry</span>
+                </div>
+                </div>
+            </div>
+            <div class="hero-gradient-edge"></div>
+            </section>
+            
+
+        <!-- BENEFITS -->
+        <section id="benefits">
+            <div class="section-header">
+            <div>
+                <div class="section-label">Why 3D scanning</div>
+                <h2 class="section-title">A precise digital twin of your building.</h2>
+            </div>
+            <p class="section-subtitle">
+                Instead of fragmented drawings and site photos, you get a single,
+                navigable 3D snapshot of reality—captured once, reused across design,
+                engineering and construction.
+            </p>
+            </div>
+
+            <div class="grid grid-cols-3">
+            <article class="card">
+                <h3 class="card-title">Capture once, reuse everywhere</h3>
+                <p class="card-body">
+                A single scan session provides geometry and imagery that can feed
+                architects, engineers, contractors and facility managers—all from
+                the same source of truth.
+                </p>
+                <p class="card-meta">Ideal for villas, renovations and complex sites.</p>
+            </article>
+
+            <article class="card">
+                <h3 class="card-title">Reduce site visits</h3>
+                <p class="card-body">
+                Explore the space virtually, measure distances, areas and heights
+                after the fact. No more repeated trips just to “double-check”
+                dimensions.
+                </p>
+                <p class="card-meta">Save time for teams and clients.</p>
+            </article>
+
+            <article class="card">
+                <h3 class="card-title">Design with confidence</h3>
+                <p class="card-body">
+                Starting from accurate geometry minimizes clashes, RFIs and change
+                orders. What we build in 3D matches what exists on site.
+                </p>
+                <p class="card-meta">Better coordination, fewer surprises.</p>
+            </article>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects-section">
+            <div class="section-inner">
+            <div class="section-header">
+                <h2>Example 3D Scanning Projects</h2>
+                <p class="section-subtitle">
+                A glimpse of how we capture and translate real-world spaces into precise, digital twins.
+                </p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project Card 1 -->
+                <article class="project-card" data-project-id="villa-athens">
+                <div class="project-card-header">
+                    <h3>Hillside Villa, Athens</h3>
+                    <p class="project-type">Residential • As-built survey</p>
+                </div>
+                <p class="project-snippet">
+                    Full exterior and interior scan to support renovation and detailed BIM modelling.
+                </p>
+                <div class="project-meta">
+                    <span class="project-tag">LiDAR + Photogrammetry</span>
+                    <span class="project-tag">~450 m²</span>
+                    <span class="project-tag">2 days on-site</span>
+                </div>
+                <button class="project-more-btn" type="button">
+                    View project
+                </button>
+                </article>
+
+                <!-- Project Card 2 -->
+                <article class="project-card" data-project-id="heritage-facade">
+                <div class="project-card-header">
+                    <h3>Heritage Facade Capture</h3>
+                    <p class="project-type">Conservation • Documentation</p>
+                </div>
+                <p class="project-snippet">
+                    High-density facade capture to document complex ornamentation and structural condition.
+                </p>
+                <div class="project-meta">
+                    <span class="project-tag">Ground photogrammetry</span>
+                    <span class="project-tag">Sub-centimetre detail</span>
+                </div>
+                <button class="project-more-btn" type="button">
+                    View project
+                </button>
+                </article>
+
+                <!-- Project Card 3 -->
+                <article class="project-card" data-project-id="interior-fitout">
+                <div class="project-card-header">
+                    <h3>Interior Fit-out Scan</h3>
+                    <p class="project-type">Commercial • Coordination</p>
+                </div>
+                <p class="project-snippet">
+                    Weekly scans to coordinate trades, detect clashes, and validate as-built conditions.
+                </p>
+                <div class="project-meta">
+                    <span class="project-tag">LiDAR</span>
+                    <span class="project-tag">Progress tracking</span>
+                </div>
+                <button class="project-more-btn" type="button">
+                    View project
+                </button>
+                </article>
+
+                <!-- Project Card 4 -->
+                <article class="project-card" data-project-id="facility-management">
+                <div class="project-card-header">
+                    <h3>Facility Scan</h3>
+                    <p class="project-type">Commercial • Food Production Facility</p>
+                </div>
+                <p class="project-snippet">
+                    As built BIM Model for facility management.
+                </p>
+                <div class="project-meta">
+                    <span class="project-tag">LiDAR</span>
+                    <span class="project-tag">Progress tracking</span>
+                </div>
+                <button class="project-more-btn" type="button">
+                    View project
+                </button>
+                </article>
+            </div>
+            </div>
+        </section>
+
+        <!-- Project Modal -->
+        <div id="project-modal" class="project-modal" aria-hidden="true">
+            <div class="project-modal-backdrop"></div>
+            <div class="project-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+                <button class="project-modal-close" type="button" aria-label="Close project details">
+                ×
+                </button>
+                <div class="project-modal-content">
+                <p class="project-modal-eyebrow">Case Study</p>
+                <h3 id="project-modal-title"></h3>
+                <p class="project-modal-type"></p>
+
+                <div class="project-modal-body">
+                    <div class="project-modal-text">
+                    <p class="project-modal-description"></p>
+                    <ul class="project-modal-bullets"></ul>
+
+                    <div class="project-modal-meta"></div>
+
+                    <div class="project-modal-deliverables">
+                        <h4>Deliverables</h4>
+                        <ul class="project-modal-deliverables-list"></ul>
+                    </div>
+                    </div>
+
+                    <div class="project-modal-media">
+                        <div class="project-media-placeholder" id="project-modal-gallery"></div>
+                    </div>
+
+                    <!-- Lightbox (add this near the end of .project-modal-dialog, before closing tags) -->
+                    <div class="project-lightbox" aria-hidden="true">
+                        <div class="project-lightbox-backdrop" data-lightbox-close></div>
+                        <figure class="project-lightbox-figure" role="dialog" aria-modal="true" aria-label="Enlarged image">
+                            <button class="project-lightbox-close" type="button" aria-label="Close image" data-lightbox-close>×</button>
+                            <img class="project-lightbox-img" alt="">
+                        </figure>
+                    </div>
+
+                </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- PROCESS -->
+        <section id="process">
+            <div class="section-header">
+            <div>
+                <div class="section-label">Process</div>
+                <h2 class="section-title">From site visit to usable 3D data.</h2>
+            </div>
+            <p class="section-subtitle">
+                We combine terrestrial LiDAR, camera rigs and drones to capture the
+                built environment, then align and clean the data in-house before
+                delivery.
+            </p>
+            </div>
+
+            <div class="grid grid-cols-2">
+            <div class="card">
+                <h3 class="card-title">Capture</h3>
+                <div class="process-step">
+                <div class="step-index">01</div>
+                <div class="step-body">
+                    <div class="step-title">Pre-scan planning</div>
+                    <p>
+                    We review drawings (if available), define scope and level of
+                    detail, and plan stations and drone flight paths.
+                    </p>
+                </div>
+                </div>
+                <div class="process-step">
+                <div class="step-index">02</div>
+                <div class="step-body">
+                    <div class="step-title">On-site scanning</div>
+                    <p>
+                    We scan interiors and exteriors with LiDAR, and supplement with
+                    high-resolution photography and aerial coverage where relevant.
+                    </p>
+                </div>
+                </div>
+                <div class="process-step">
+                <div class="step-index">03</div>
+                <div class="step-body">
+                    <div class="step-title">Quality checks</div>
+                    <p>
+                    Before leaving site, we verify coverage, fill any gaps and
+                    confirm critical areas have been captured.
+                    </p>
+                </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Processing & delivery</h3>
+                <div class="process-step">
+                <div class="step-index">04</div>
+                <div class="step-body">
+                    <div class="step-title">Registration & cleaning</div>
+                    <p>
+                    Scan data is aligned, denoised and structured in-house. We
+                    remove stray geometry and optimize files for performance.
+                    </p>
+                </div>
+                </div>
+                <div class="process-step">
+                <div class="step-index">05</div>
+                <div class="step-body">
+                    <div class="step-title">Data formats</div>
+                    <p>
+                    We can deliver point clouds (E57, RCP, LAS, etc.), meshes or
+                    models compatible with your preferred tools.
+                    </p>
+                </div>
+                </div>
+                <div class="process-step">
+                <div class="step-index">06</div>
+                <div class="step-body">
+                    <div class="step-title">Optional modeling</div>
+                    <p>
+                    Where needed, we can convert the scan into a clean 3D model or
+                    BIM geometry as a separate scope.
+                    </p>
+                </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- USE CASES -->
+        <section id="use-cases">
+            <div class="section-header">
+            <div>
+                <div class="section-label">Use cases</div>
+                <h2 class="section-title">Where 3D scanning creates the most value.</h2>
+            </div>
+            <p class="section-subtitle">
+                We focus on the built environment—villas, existing buildings and
+                complex sites—where accuracy and coordination matter.
+            </p>
+            </div>
+
+            <div class="grid grid-cols-3">
+            <article class="card">
+                <h3 class="card-title">Villas & private residences</h3>
+                <p class="card-body">
+                Capture existing conditions before renovation or extension. Ideal
+                for architects and owners who want clarity early on.
+                </p>
+                <div class="tag-row">
+                <span class="tag">Renovations</span>
+                <span class="tag">Extensions</span>
+                <span class="tag">Interior design</span>
+                </div>
+            </article>
+
+            <article class="card">
+                <h3 class="card-title">Existing buildings & as-built</h3>
+                <p class="card-body">
+                Replace outdated or missing drawings with accurate, measurable 3D
+                data. Useful for change of use, facade upgrades and MEP studies.
+                </p>
+                <div class="tag-row">
+                <span class="tag">As-built surveys</span>
+                <span class="tag">Clash avoidance</span>
+                <span class="tag">Retrofit</span>
+                </div>
+            </article>
+
+            <article class="card">
+                <h3 class="card-title">Sites & exteriors</h3>
+                <p class="card-body">
+                Drone-assisted capture of roofs, facades and surrounding terrain for
+                planning, landscaping and volume calculations.
+                </p>
+                <div class="tag-row">
+                <span class="tag">Site modeling</span>
+                <span class="tag">Topography</span>
+                <span class="tag">Roof analysis</span>
+                </div>
+            </article>
+            </div>
+        </section>
+
+        <!-- CTA / CONTACT ANCHOR -->
+        <section id="contact" class="cta">
+            <h2>Discuss a 3D scan for your project.</h2>
+            <p>
+            Share a few details about the property or site—location, size and what
+            you need the data for—and we’ll respond with a proposed approach and
+            timeline.
+            </p>
+            <button class="primary-btn">
+            <a href="mailto:filippos@n3wtro.com">START A PROJECT ENQUIRY</a>
+            </button>
+            <p class="cta-note">
+            You can also include drawings, photos or any existing documentation
+            when you get in touch.
+            </p>
+        </section>
+        </main>
+    </div>
+
+  <!-- three.js + parallax scripts -->
+  <script type="module" src="./JS/threeJS.js"></script>
+  <!-- Projects -->
+  <script src="./JS/projects.js"></script>
 </body>
 </html>
