@@ -1,18 +1,18 @@
 // Example project data
 const PROJECT_DATA = {
-  "villa-athens": {
-    title: "Hillside Villa, Athens",
-    type: "Residential • As-built survey",
+  "food-athens": {
+    title: "Food Testing Facility, Athens",
+    type: "Testing Plant - Labs • As-built survey",
     description:
-      "Full 3D capture of a multi-level villa to support a deep renovation and coordination with structural and MEP engineers.",
+      "Full 3D capture of a multi-level food processing & testing lab to support a deep renovation and coordination with structural and MEP engineers.",
     bullets: [
-      "Exterior and interior captured using tripod LiDAR and DSLR photogrammetry.",
+      "Interior captured using tripod LiDAR and DSLR photogrammetry.",
       "Generated a unified, cleaned point cloud and high-resolution mesh.",
       "Delivered a Revit-ready BIM model to the design team within one week.",
     ],
     meta: [
       "LiDAR + Photogrammetry",
-      "≈450 m²",
+      "≈2500 m²",
       "2 days on-site",
       "National scope",
     ],
@@ -21,15 +21,7 @@ const PROJECT_DATA = {
       "Decimated mesh for visualization",
       "BIM-ready geometry export",
     ],
-    images: [
-      "/img/1.jpeg",
-      "/img/1.jpeg",
-      "/img/1.jpeg",
-      "/img/1.jpeg",
-      "/img/1.jpeg",
-      "/img/1.jpeg",
-      "/img/1.jpeg",
-    ],
+    images: ["/img/1.jpeg"],
   },
   "heritage-facade": {
     title: "Heritage Facade Capture",
@@ -54,21 +46,21 @@ const PROJECT_DATA = {
       "/img/IMG_9018.jpg",
     ],
   },
-  "interior-fitout": {
-    title: "Interior Fit-out Scan",
-    type: "Commercial • Coordination",
-    description:
-      "Recurring scans of an office fit-out to align trades and check clashes against design intent.",
+  "cycladic-resi": {
+    title: "Syros Island Scan",
+    type: "Private • Residential",
+    description: "3D scan of a small island residence in Syros",
     bullets: [
-      "Weekly LiDAR scans of key zones during construction.",
-      "Overlay with design model to spot clashes early (e.g. MEP vs. ceilings).",
-      "Visual reports shared with the project team after each visit.",
+      "3D scan walkthough for easy remote viewing",
+      "Orthophotos extracted for easy CAD processing",
     ],
-    meta: ["LiDAR scanning", "Progress tracking", "Clash checking"],
-    deliverables: [
-      "Weekly registered point clouds",
-      "Deviation reports",
-      "Annotated snapshots for site meetings",
+    meta: ["LiDAR scanning", "Remote viewing"],
+    deliverables: ["Point cloud", "Walk through"],
+    images: [
+      "/img/syros.mp4",
+      "/img/syros-1.jpg",
+      "/img/syros-2.jpg",
+      "/img/syros-3.jpg",
     ],
   },
   "facility-management": {
@@ -92,6 +84,24 @@ const PROJECT_DATA = {
       "/img/mg_3.jpg",
       "/img/mg_4.jpg",
     ],
+  },
+  "pelion-heritage": {
+    title: "Pelion Retreat",
+    type: "Private • Residential",
+    description: "As built BIM Model & as-built drawings.",
+    bullets: ["As built drawings of the buildings", "BIM LOD 300 Model"],
+    meta: ["LiDAR scanning", "As built drawings", "BIM Modelling"],
+    deliverables: ["Point cloud", "BIM LOD 300 Model", "As-built drawings"],
+    images: ["/img/pelion.mp4", "/img/p-1.jpg", "/img/p-3.jpg", "/img/p-4.jpg"],
+  },
+  "resi-building": {
+    title: "Lykavitos Duplex",
+    type: "Residential • Apartment Duplex",
+    description: "As built drawings & 3D Model for design.",
+    bullets: ["As built drawings", "3D Model"],
+    meta: ["LiDAR scanning", "Urban context", "Precision Modelling"],
+    deliverables: ["Point cloud", "3D Model", "2D CAD Drawings"],
+    images: ["/img/d-1.jpg", "/img/d-2.jpg", "/img/d-3.jpg", "/img/d-4.jpg"],
   },
 };
 
