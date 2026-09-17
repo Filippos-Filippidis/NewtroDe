@@ -2,8 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Newtro - 3D Scanning</title>
+  <title>Spatial Intelligence for the Built Environment | NEWTRO</title>
+  <meta name="description" content="NEWTRO combines architecture, reality capture, computational design, fabrication, construction and education for spatial projects." />
+  <link rel="canonical" href="https://n3wtro.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NEWTRO" />
+  <meta property="og:title" content="Spatial Intelligence for the Built Environment | NEWTRO" />
+  <meta property="og:description" content="Architecture, reality capture, computational design, fabrication, construction and education for spatial projects." />
+  <meta property="og:url" content="https://n3wtro.com/" />
+  <meta property="og:image" content="https://n3wtro.com/img/arch.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Spatial Intelligence for the Built Environment | NEWTRO" />
+  <meta name="twitter:description" content="Architecture, reality capture, computational design, fabrication, construction and education for spatial projects." />
+  <meta name="twitter:image" content="https://n3wtro.com/img/arch.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "NEWTRO",
+    "url": "https://n3wtro.com/",
+    "logo": "https://n3wtro.com/img/logo.svg",
+    "email": "filippos@n3wtro.com",
+    "description": "Spatial intelligence company working across architecture, reality capture, computational design, fabrication, construction and education.",
+    "sameAs": [
+      "https://www.instagram.com/n3wtro",
+      "https://www.linkedin.com/company/newtro/"
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 
@@ -13,448 +42,270 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-8CQD0X8NVR');
 </script>
 
 <body>
-    <!-- Start of body -->
-    <div class="page-container">
-        <header>
-        <div class="nav-inner">
-            <div class="logo">
-            <span>NEWTRO</span> Studio
+  <div class="page-container">
+    <header>
+      <div class="nav-inner">
+        <a class="logo" href="/" aria-label="NEWTRO Studio home">
+          <img src="/img/logo.svg" alt="" class="logo-mark">
+          <strong>NEWTRO</strong> Studio
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <!-- <a href="#approach">Approach</a> -->
+          <button class="nav-link-button" type="button" data-about-open>About</button>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-toggle" type="button">Capabilities</button>
+            <div class="nav-dropdown-menu">
+              <a href="#capability-architecture">Architecture</a>
+              <a href="#capability-reality-capture">Reality Capture</a>
+              <a href="#capability-computational-design">Computational Design</a>
+              <a href="#capability-fabrication">Digital Fabrication</a>
+              <a href="#capability-construction">Construction & MMC</a>
+              <a href="#capability-education">Education</a>
             </div>
-            <nav>
-            <a href="#benefits">Benefits</a>
-            <a href="#process">Process</a>
-            <a href="#use-cases">Use Cases</a>
-            </nav>
-            <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-            Book a scan
-            </button>
-        </div>
-        </header>
-
-        <main>
-            <!-- HERO with three.js canvas -->
-            <section class="hero" id="top">
-            <canvas id="hero-canvas"></canvas>
-            <div class="hero-overlay" data-parallax data-parallax-speed="0.2">
-                <div class="hero-topline">Built Environment &nbsp;•&nbsp; 3D Scanning</div>
-                <h1 class="hero-title">
-                High-fidelity <span class="hero-highlight">3D scanning</span> for the urban environment.
-                </h1>
-                <p class="hero-subtitle">
-                We capture precise digital twins of villas and small-scale buildings across the country
-                using lidar, photogrammetry and drones — ready for architects, engineers and contractors.
-                </p>
-                <div class="hero-ctas">
-                    <button class="primary-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-                        Book a scan
-                    </button>
-                    <button class="ghost-btn" onclick="document.getElementById('process').scrollIntoView({behavior:'smooth'})">
-                        View workflow
-                    </button>
-                </div>
-
-                <div class="hero-meta">
-                <div class="hero-meta-item">
-                    <label>Geographic scope</label>
-                    <span>National coverage</span>
-                </div>
-                <div class="hero-meta-item">
-                    <label>Typical project</label>
-                    <span>Standalone villas &amp; small complexes</span>
-                </div>
-                <div class="hero-meta-item">
-                    <label>Capture methods</label>
-                    <span>Lidar • Drone • Photogrammetry</span>
-                </div>
-                </div>
-            </div>
-            <div class="hero-gradient-edge"></div>
-            </section>
-            
-
-        <!-- BENEFITS -->
-        <section id="benefits">
-            <div class="section-header">
-            <div>
-                <div class="section-label">Why 3D scanning</div>
-                <h2 class="section-title">A precise digital twin of your building.</h2>
-            </div>
-            <p class="section-subtitle">
-                Instead of fragmented drawings and site photos, you get a single,
-                navigable 3D snapshot of reality—captured once, reused across design,
-                engineering and construction.
-            </p>
-            </div>
-
-            <div class="grid grid-cols-3">
-            <article class="card">
-                <h3 class="card-title">Capture once, reuse everywhere</h3>
-                <p class="card-body">
-                A single scan session provides geometry and imagery that can feed
-                architects, engineers, contractors and facility managers—all from
-                the same source of truth.
-                </p>
-                <p class="card-meta">Ideal for villas, renovations and complex sites.</p>
-            </article>
-
-            <article class="card">
-                <h3 class="card-title">Reduce site visits</h3>
-                <p class="card-body">
-                Explore the space virtually, measure distances, areas and heights
-                after the fact. No more repeated trips just to “double-check”
-                dimensions.
-                </p>
-                <p class="card-meta">Save time for teams and clients.</p>
-            </article>
-
-            <article class="card">
-                <h3 class="card-title">Design with confidence</h3>
-                <p class="card-body">
-                Starting from accurate geometry minimizes clashes, RFIs and change
-                orders. What we build in 3D matches what exists on site.
-                </p>
-                <p class="card-meta">Better coordination, fewer surprises.</p>
-            </article>
-            </div>
-        </section>
-
-        <section id="projects" class="section projects-section">
-            <div class="section-inner">
-
-                <div class="section-header">
-                    <h2>Example 3D Scanning Projects</h2>
-                    <p class="section-subtitle">
-                    A glimpse of how we capture and translate real-world spaces into precise, digital twins.
-                    </p>
-                </div>
-
-                <div class="projects-grid">
-                    
-                    <!-- Project Card 1 -->
-                    <article class="project-card" data-project-id="food-athens">
-                        <div class="project-card-header">
-                            <h3>Food Testing Facility, Athens</h3>
-                            <p class="project-type">Testing Plant - Labs • As-built survey</p>
-                        </div>
-                        <p class="project-snippet">
-                            Full interior scan to support renovation and detailed BIM modelling.
-                        </p>
-                        <div class="project-meta">
-                            <span class="project-tag">LiDAR + Photogrammetry</span>
-                            <span class="project-tag">~2500 m²</span>
-                            <span class="project-tag">2 days on-site</span>
-                        </div>
-                        <button class="project-more-btn" type="button">
-                            View project
-                        </button>
-                    </article>
-
-                    <!-- Project Card 2 -->
-                    <article class="project-card" data-project-id="heritage-facade">
-                    <div class="project-card-header">
-                        <h3>Heritage Facade Capture</h3>
-                        <p class="project-type">Conservation • Documentation</p>
-                    </div>
-                    <p class="project-snippet">
-                        High-density facade capture to document complex ornamentation and structural condition.
-                    </p>
-                    <div class="project-meta">
-                        <span class="project-tag">Ground photogrammetry</span>
-                        <span class="project-tag">Sub-centimetre detail</span>
-                    </div>
-                    <button class="project-more-btn" type="button">
-                        View project
-                    </button>
-                    </article>
-
-                    <!-- Project Card 3 -->
-                    <article class="project-card" data-project-id="cycladic-resi">
-                        <div class="project-card-header">
-                            <h3>Syros Island Scan</h3>
-                            <p class="project-type">Private • Residential</p>
-                        </div>
-                        <p class="project-snippet">
-                            3D scan walkthough for easy remote viewing.
-                        </p>
-                        <div class="project-meta">
-                            <span class="project-tag">LiDAR</span>
-                            <span class="project-tag">Digital Walkthrough</span>
-                        </div>
-                        <button class="project-more-btn" type="button">
-                            View project
-                        </button>
-                    </article>
-
-                    <!-- Project Card 4 -->
-                    <article class="project-card" data-project-id="facility-management">
-                        <div class="project-card-header">
-                            <h3>Facility Scan</h3>
-                            <p class="project-type">Commercial • Food Production Facility</p>
-                        </div>
-                        <p class="project-snippet">
-                            As built BIM Model for facility management.
-                        </p>
-                        <div class="project-meta">
-                            <span class="project-tag">LiDAR</span>
-                            <span class="project-tag">Progress tracking</span>
-                            <span class="project-tag">Facility management</span>
-                        </div>
-                        <button class="project-more-btn" type="button">
-                            View project
-                        </button>
-                    </article>
-
-                    <!-- Project Card 5 -->
-                    <article class="project-card" data-project-id="pelion-heritage">
-                        <div class="project-card-header">
-                            <h3>Pelion Retreat</h3>
-                            <p class="project-type">Private • Residential</p>
-                        </div>
-                        <p class="project-snippet">
-                            As built BIM Model & as-built drawings.
-                        </p>
-                        <div class="project-meta">
-                            <span class="project-tag">LiDAR</span>
-                            <span class="project-tag">As-built drawings</span>
-                            <span class="project-tag">3D Model</span>
-                        </div>
-                        <button class="project-more-btn" type="button">
-                            View project
-                        </button>
-                    </article>
-
-                    <!-- Project Card 6 -->
-                    <article class="project-card" data-project-id="resi-building">
-                        <div class="project-card-header">
-                            <h3>Lykavitos Duplex</h3>
-                            <p class="project-type">Residential • Apartment Duplex</p>
-                        </div>
-                        <p class="project-snippet">
-                            As built drawings & 3D Model for design.
-                        </p>
-                        <div class="project-meta">
-                            <span class="project-tag">LiDAR</span>
-                            <span class="project-tag">Urban context</span>
-                        </div>
-                        <button class="project-more-btn" type="button">
-                            View project
-                        </button>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Project Modal -->
-        <div id="project-modal" class="project-modal" aria-hidden="true">
-            <div class="project-modal-backdrop"></div>
-            <div class="project-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
-                <button class="project-modal-close" type="button" aria-label="Close project details">
-                ×
-                </button>
-                <div class="project-modal-content">
-                <p class="project-modal-eyebrow">Case Study</p>
-                <h3 id="project-modal-title"></h3>
-                <p class="project-modal-type"></p>
-
-                <div class="project-modal-body">
-                    <div class="project-modal-text">
-                    <p class="project-modal-description"></p>
-                    <ul class="project-modal-bullets"></ul>
-
-                    <div class="project-modal-meta"></div>
-
-                    <div class="project-modal-deliverables">
-                        <h4>Deliverables</h4>
-                        <ul class="project-modal-deliverables-list"></ul>
-                    </div>
-                    </div>
-
-                    <div class="project-modal-media">
-                        <div class="project-media-placeholder" id="project-modal-gallery"></div>
-                    </div>
-
-                    <!-- Lightbox (add this near the end of .project-modal-dialog, before closing tags) -->
-                    <div class="project-lightbox" aria-hidden="true">
-                        <div class="project-lightbox-backdrop" data-lightbox-close></div>
-                        <figure class="project-lightbox-figure" role="dialog" aria-modal="true" aria-label="Enlarged image">
-                            <button class="project-lightbox-close" type="button" aria-label="Close image" data-lightbox-close>×</button>
-                            <img class="project-lightbox-img" alt="">
-                        </figure>
-                    </div>
-
-                </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- PROCESS -->
-        <section id="process">
-            <div class="section-header">
-            <div>
-                <div class="section-label">Process</div>
-                <h2 class="section-title">From site visit to usable 3D data.</h2>
-            </div>
-            <p class="section-subtitle">
-                We combine terrestrial LiDAR, camera rigs and drones to capture the
-                built environment, then align and clean the data in-house before
-                delivery.
-            </p>
-            </div>
-
-            <div class="grid grid-cols-2">
-            <div class="card">
-                <h3 class="card-title">Capture</h3>
-                <div class="process-step">
-                <div class="step-index">01</div>
-                <div class="step-body">
-                    <div class="step-title">Pre-scan planning</div>
-                    <p>
-                    We review drawings (if available), define scope and level of
-                    detail, and plan stations and drone flight paths.
-                    </p>
-                </div>
-                </div>
-                <div class="process-step">
-                <div class="step-index">02</div>
-                <div class="step-body">
-                    <div class="step-title">On-site scanning</div>
-                    <p>
-                    We scan interiors and exteriors with LiDAR, and supplement with
-                    high-resolution photography and aerial coverage where relevant.
-                    </p>
-                </div>
-                </div>
-                <div class="process-step">
-                <div class="step-index">03</div>
-                <div class="step-body">
-                    <div class="step-title">Quality checks</div>
-                    <p>
-                    Before leaving site, we verify coverage, fill any gaps and
-                    confirm critical areas have been captured.
-                    </p>
-                </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3 class="card-title">Processing & delivery</h3>
-                <div class="process-step">
-                <div class="step-index">04</div>
-                <div class="step-body">
-                    <div class="step-title">Registration & cleaning</div>
-                    <p>
-                    Scan data is aligned, denoised and structured in-house. We
-                    remove stray geometry and optimize files for performance.
-                    </p>
-                </div>
-                </div>
-                <div class="process-step">
-                <div class="step-index">05</div>
-                <div class="step-body">
-                    <div class="step-title">Data formats</div>
-                    <p>
-                    We can deliver point clouds (E57, RCP, LAS, etc.), meshes or
-                    models compatible with your preferred tools.
-                    </p>
-                </div>
-                </div>
-                <div class="process-step">
-                <div class="step-index">06</div>
-                <div class="step-body">
-                    <div class="step-title">Optional modeling</div>
-                    <p>
-                    Where needed, we can convert the scan into a clean 3D model or
-                    BIM geometry as a separate scope.
-                    </p>
-                </div>
-                </div>
-            </div>
-            </div>
-        </section>
-
-        <!-- USE CASES -->
-        <section id="use-cases">
-            <div class="section-header">
-            <div>
-                <div class="section-label">Use cases</div>
-                <h2 class="section-title">Where 3D scanning creates the most value.</h2>
-            </div>
-            <p class="section-subtitle">
-                We focus on the built environment—villas, existing buildings and
-                complex sites—where accuracy and coordination matter.
-            </p>
-            </div>
-
-            <div class="grid grid-cols-3">
-            <article class="card">
-                <h3 class="card-title">Villas & private residences</h3>
-                <p class="card-body">
-                Capture existing conditions before renovation or extension. Ideal
-                for architects and owners who want clarity early on.
-                </p>
-                <div class="tag-row">
-                <span class="tag">Renovations</span>
-                <span class="tag">Extensions</span>
-                <span class="tag">Interior design</span>
-                </div>
-            </article>
-
-            <article class="card">
-                <h3 class="card-title">Existing buildings & as-built</h3>
-                <p class="card-body">
-                Replace outdated or missing drawings with accurate, measurable 3D
-                data. Useful for change of use, facade upgrades and MEP studies.
-                </p>
-                <div class="tag-row">
-                <span class="tag">As-built surveys</span>
-                <span class="tag">Clash avoidance</span>
-                <span class="tag">Retrofit</span>
-                </div>
-            </article>
-
-            <article class="card">
-                <h3 class="card-title">Sites & exteriors</h3>
-                <p class="card-body">
-                Drone-assisted capture of roofs, facades and surrounding terrain for
-                planning, landscaping and volume calculations.
-                </p>
-                <div class="tag-row">
-                <span class="tag">Site modeling</span>
-                <span class="tag">Topography</span>
-                <span class="tag">Roof analysis</span>
-                </div>
-            </article>
-            </div>
-        </section>
-
-        <!-- CTA / CONTACT ANCHOR -->
-        <section id="contact" class="cta">
-            <h2>Discuss a 3D scan for your project.</h2>
-            <p>
-            Share a few details about the property or site—location, size and what
-            you need the data for—and we’ll respond with a proposed approach and
-            timeline.
-            </p>
-            <button class="primary-btn">
-            <a href="mailto:filippos@n3wtro.com">START A PROJECT ENQUIRY</a>
-            </button>
-            <p class="cta-note">
-            You can also include drawings, photos or any existing documentation
-            when you get in touch.
-            </p>
-        </section>
-        </main>
+          </div>
+          <a href="projects.html">Projects</a>
+        </nav>
+        <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          Start a project
+        </button>
+      </div>
+    </header>
+    <div class="floating-social" aria-label="Social media links">
+      <a href="mailto:filippos@n3wtro.com" aria-label="Email NEWTRO"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></a>
+      <a href="https://www.instagram.com/n3wtro" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+      <a href="https://www.linkedin.com/company/newtro/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
     </div>
 
-  <!-- three.js + parallax scripts -->
+    <div class="about-modal" id="about-modal" aria-hidden="true">
+      <div class="about-modal-backdrop" data-about-close></div>
+      <section class="about-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="about-modal-title">
+        <button class="about-modal-close" type="button" aria-label="Close about panel" data-about-close>&times;</button>
+        <div class="about-modal-media">
+          <img src="/img/logo.svg" alt="NEWTRO founder portrait">
+        </div>
+        <div class="about-modal-content">
+          <p class="about-modal-eyebrow">About NEWTRO</p>
+          <h2 id="about-modal-title">Founder profile.</h2>
+          <p>
+            NEWTRO is founded by Filippos Filippidis as a spatial intelligence studio connecting architecture,
+            reality capture, computational design, fabrication, construction and education.
+          </p>
+          <div class="about-cv">
+            <section class="about-cv-section">
+              <h3>Bio</h3>
+              <p>
+                Architect and spatial technologist working between design, digital surveying, computational workflows and physical delivery.
+                <a class="about-inline-link" href="https://www.linkedin.com/in/filipposfilippidis/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn profile</a><br>
+                <a class="about-inline-link" href="https://www.filipposfilippidis.com" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe" aria-hidden="true"></i> filipposfilippidis.com</a>
+              </p>
+            </section>
+
+            <section class="about-cv-section">
+              <h3>Education</h3>
+              <ul>
+                <li>UEL Part 2 DipArch, London.</li>
+                <li>MSAAD, Columbia University, New York.</li>
+              </ul>
+            </section>
+
+            <section class="about-cv-section">
+              <h3>Working Experience</h3>
+              <ul>
+                <li>Rizos Architects — Junior Architect</li>
+                <li>ASPA — Junior Architect</li>
+                <li>ecoLogicStudio — Computational Designer</li>
+                <li>Robofold — Computational Designer</li>
+                <li>Acconci Studio — Computational Designer</li>
+                <li>FFA Architects — Junior Architect</li>
+                <li>Foster + Partners — Architect</li>
+                <li>Bryden Wood — Senior Computational Designer</li>
+              </ul>
+            </section>
+
+            <section class="about-cv-section">
+              <h3>Teaching</h3>
+              <ul>
+                <li>Brighton University — Studio Leader</li>
+                <li>Manchester Metropolitan University — Studio Leader</li>
+                <li>Manchester Metropolitan University — Associate Lecturer</li>
+                <li>AAVS Melbourne</li>
+                <li>AAVS Uzbekistan</li>
+                <li>VS Azerbaijan</li>
+              </ul>
+            </section>
+
+          </div>
+          <div class="about-modal-actions">
+            <a class="primary-btn" href="mailto:filippos@n3wtro.com">Start a conversation</a>
+            <a class="ghost-btn" href="/projects.html">View projects</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <main>
+      <section class="hero" id="top">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-overlay" data-parallax data-parallax-speed="0.2">
+          <!-- <div class="hero-topline">Built Environment &nbsp;•&nbsp; Spatial Intelligence</div> -->
+          <h1 class="hero-title">
+            Spatial intelligence for the <span class="hero-highlight">built environment</span>.
+          </h1>
+          <p class="hero-subtitle">
+            NEWTRO combines design, construction, computational workflows, reality capture, fabrication, analytics and education to transform how spaces are conceived, delivered and understood.
+          </p>
+          <div class="hero-ctas">
+            <button class="primary-btn" onclick="document.getElementById('capabilities').scrollIntoView({behavior:'smooth'})">
+              Explore capabilities
+            </button>
+            <button class="ghost-btn" onclick="document.getElementById('approach').scrollIntoView({behavior:'smooth'})">
+              How we work
+            </button>
+          </div>
+        </div>
+        <div class="hero-gradient-edge"></div>
+      </section>
+
+      <section id="approach">
+        <div class="section-header">
+          <div>
+            <div class="section-label">About NEWTRO</div>
+            <h2 class="section-title">A spatial intelligence company.</h2>
+          </div>
+          <p class="section-subtitle">
+            We work across the full spatial lifecycle: from documenting existing conditions to designing, fabricating, constructing and teaching new ways of working with the built environment.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-3">
+          <article class="card">
+            <h3 class="card-title">Understand space</h3>
+            <p class="card-body">We capture, model and analyze physical environments so decisions are based on accurate spatial information.</p>
+            <p class="card-meta">Reality capture, analytics, digital twins.</p>
+          </article>
+          <article class="card">
+            <h3 class="card-title">Design with intelligence</h3>
+            <p class="card-body">We use architecture, computational design and data-informed workflows to generate clearer and more adaptable design outcomes.</p>
+            <p class="card-meta">Architecture, parametric systems, visualization.</p>
+          </article>
+          <article class="card">
+            <h3 class="card-title">Make and build better</h3>
+            <p class="card-body">We connect digital models to fabrication, off-site construction and modern delivery methods.</p>
+            <p class="card-meta">3D printing, fabrication, MMC, modular systems.</p>
+          </article>
+        </div>
+      </section>
+
+      <div style="text-align:center;margin-top:2rem;">
+        <a href="/projects.html" class="primary-btn">VIEW PROJECTS</a>
+      </div>
+
+      <section id="capabilities">
+        <div class="section-header">
+          <div>
+            <div class="section-label">Capabilities</div>
+            <h2 class="section-title">Connected expertise for spatial projects.</h2>
+          </div>
+          <p class="section-subtitle">
+            Each capability can stand alone, but the greatest value comes when they are combined into an integrated workflow.
+          </p>
+        </div>
+
+        <div class="projects-grid capability-grid">
+          <article class="project-card capability-card visual-project-card" id="capability-architecture">
+            <div class="project-card-image"><img src="/img/archi.png" alt="Placeholder for Architecture"></div>
+            <div class="project-card-header"><h3>Architecture</h3><p class="project-type">Design</p></div>
+            <p class="project-snippet">Data-informed architectural design for new buildings, renovations, interiors and adaptive reuse.</p>
+            <div class="project-meta"><span class="project-tag">Design</span><span class="project-tag">Documentation</span><span class="project-tag">Delivery</span></div>
+          </article>
+
+          <article class="project-card capability-card visual-project-card" id="capability-reality-capture">
+            <div class="project-card-image"><img src="/img/scann.png" alt="Placeholder for Reality Capture"></div>
+            <div class="project-card-header"><h3>Reality Capture</h3><p class="project-type">3D Scanning</p></div>
+            <p class="project-snippet">LiDAR, photogrammetry and digital twin workflows for accurate existing-condition documentation.</p>
+            <div class="project-meta"><span class="project-tag">LiDAR</span><span class="project-tag">Photogrammetry</span><span class="project-tag">BIM</span></div>
+          </article>
+
+          <article class="project-card capability-card visual-project-card" id="capability-computational-design">
+            <div class="project-card-image"><img src="/img/cdesign.png" alt="Placeholder for Computational Design"></div>
+            <div class="project-card-header"><h3>Computational Design</h3><p class="project-type">Systems</p></div>
+            <p class="project-snippet">Parametric, generative and optimization workflows that connect design intent with performance and fabrication.</p>
+            <div class="project-meta"><span class="project-tag">Parametric</span><span class="project-tag">Automation</span><span class="project-tag">Optimization</span></div>
+          </article>
+
+          <article class="project-card capability-card visual-project-card" id="capability-fabrication">
+            <div class="project-card-image"><img src="/img/dfab.png" alt="Placeholder for Digital Fabrication"></div>
+            <div class="project-card-header"><h3>Digital Fabrication</h3><p class="project-type">Make</p></div>
+            <p class="project-snippet">3D printing, prototyping and fabrication workflows that turn digital models into physical components.</p>
+            <div class="project-meta"><span class="project-tag">3D Printing</span><span class="project-tag">Prototypes</span><span class="project-tag">Components</span></div>
+          </article>
+
+          <article class="project-card capability-card visual-project-card" id="capability-construction">
+            <div class="project-card-image"><img src="/img/mmc.png" alt="Placeholder for Construction & MMC"></div>
+            <div class="project-card-header"><h3>Construction & MMC</h3><p class="project-type">Build</p></div>
+            <p class="project-snippet">Modern methods of construction, off-site strategies and modular development workflows.</p>
+            <div class="project-meta"><span class="project-tag">MMC</span><span class="project-tag">Modular</span><span class="project-tag">Off-site</span></div>
+          </article>
+
+          <article class="project-card capability-card visual-project-card" id="capability-education">
+            <div class="project-card-image"><img src="/img/learning.png" alt="Placeholder for Education"></div>
+            <div class="project-card-header"><h3>Education</h3><p class="project-type">Learn</p></div>
+            <p class="project-snippet">Teaching, workshops and knowledge transfer around spatial technologies and design computation.</p>
+            <div class="project-meta"><span class="project-tag">Workshops</span><span class="project-tag">Training</span><span class="project-tag">Research</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="cta">
+        <h2>Start a spatial intelligence project.</h2>
+        <p>Tell us what you are trying to understand, design, make or build — and we’ll help define the right workflow.</p>
+        <button class="primary-btn"><a href="mailto:filippos@n3wtro.com">START A PROJECT ENQUIRY</a></button>
+        <p class="cta-note">You can include drawings, photos, scans, project briefs or any existing documentation.</p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <a class="footer-brand" href="/" aria-label="NEWTRO Studio home">
+        <img src="/img/logo.svg" alt="" class="footer-logo">
+        <span><strong>NEWTRO</strong> Studio</span>
+      </a>
+      <div class="footer-links">
+        <a href="mailto:filippos@n3wtro.com">filippos@n3wtro.com</a>
+        <a href="https://www.instagram.com/n3wtro" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
+        <a href="https://www.linkedin.com/company/newtro/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i><span>LinkedIn</span></a>
+      </div>
+      <p>&copy; 2026 NEWTRO. All rights reserved.</p>
+    </footer>
+  </div>
+
   <script type="module" src="./JS/threeJS.js"></script>
-  <!-- Projects -->
-  <script src="./JS/projects.js"></script>
+  <script>
+    const aboutModal = document.getElementById("about-modal");
+    const aboutOpenButtons = document.querySelectorAll("[data-about-open]");
+    const aboutCloseButtons = document.querySelectorAll("[data-about-close]");
+
+    function openAboutModal() {
+      if (!aboutModal) return;
+      aboutModal.classList.add("is-open");
+      aboutModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeAboutModal() {
+      if (!aboutModal) return;
+      aboutModal.classList.remove("is-open");
+      aboutModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    aboutOpenButtons.forEach((button) => button.addEventListener("click", openAboutModal));
+    aboutCloseButtons.forEach((button) => button.addEventListener("click", closeAboutModal));
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && aboutModal?.classList.contains("is-open")) closeAboutModal();
+    });
+  </script>
 </body>
 </html>

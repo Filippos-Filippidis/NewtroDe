@@ -3,6 +3,12 @@ import * as THREE from "https://unpkg.com/three@0.165.0/build/three.module.js";
 
 const canvas = document.getElementById("hero-canvas");
 const heroSection = document.querySelector(".hero");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+if (!canvas || !heroSection) {
+  throw new Error("Hero canvas or hero section not found.");
+}
+
 let width = heroSection.clientWidth;
 let height = heroSection.clientHeight;
 
@@ -33,10 +39,10 @@ for (let i = 0; i < positionAttr.count; i++) {
 positionAttr.needsUpdate = true;
 
 const material = new THREE.MeshBasicMaterial({
-  color: 0x46e6ff,
+  color: 0x7bada5,
   wireframe: true,
   transparent: true,
-  opacity: 0.6,
+  opacity: 0.52,
 });
 
 const mesh = new THREE.Mesh(geometry, material);
@@ -55,26 +61,85 @@ particlesGeometry.setAttribute(
 );
 const particlesMaterial = new THREE.PointsMaterial({
   size: 0.04,
-  color: 0x46e6ff,
+  color: 0x7bada5,
   transparent: true,
-  opacity: 0.7,
+  opacity: 0.46,
 });
 const particles = new THREE.Points(particlesGeometry, particlesMaterial);
 scene.add(particles);
 
 const clock = new THREE.Clock();
+let animationFrameId = null;
+let isHeroVisible = true;
+let isDocumentVisible = !document.hidden;
+
+function renderScene() {
+  renderer.render(scene, camera);
+}
+
+function shouldAnimate() {
+  return isHeroVisible && isDocumentVisible && !prefersReducedMotion.matches;
+}
 
 function animate() {
+  if (!shouldAnimate()) {
+    animationFrameId = null;
+    return;
+  }
+
   const elapsed = clock.getElapsedTime();
   mesh.rotation.y = elapsed * 0.15;
   mesh.rotation.x = Math.sin(elapsed * 0.1) * 0.15;
   particles.rotation.y = elapsed * 0.02;
 
-  renderer.render(scene, camera);
-  requestAnimationFrame(animate);
+  renderScene();
+  animationFrameId = requestAnimationFrame(animate);
 }
 
-animate();
+function startAnimation() {
+  if (animationFrameId || !shouldAnimate()) return;
+  clock.start();
+  animationFrameId = requestAnimationFrame(animate);
+}
+
+function stopAnimation() {
+  if (!animationFrameId) return;
+  cancelAnimationFrame(animationFrameId);
+  animationFrameId = null;
+  clock.stop();
+}
+
+function applyMotionPreference() {
+  if (prefersReducedMotion.matches) {
+    stopAnimation();
+    mesh.rotation.set(0.08, -0.18, 0);
+    particles.rotation.set(0, 0, 0);
+    renderScene();
+    return;
+  }
+
+  startAnimation();
+}
+
+const heroObserver = new IntersectionObserver(
+  ([entry]) => {
+    isHeroVisible = entry.isIntersecting;
+    if (isHeroVisible) startAnimation();
+    else stopAnimation();
+  },
+  { threshold: 0.05 }
+);
+
+heroObserver.observe(heroSection);
+
+document.addEventListener("visibilitychange", () => {
+  isDocumentVisible = !document.hidden;
+  if (isDocumentVisible) startAnimation();
+  else stopAnimation();
+});
+
+prefersReducedMotion.addEventListener("change", applyMotionPreference);
+applyMotionPreference();
 
 function onResize() {
   width = heroSection.clientWidth;
@@ -82,6 +147,7 @@ function onResize() {
   camera.aspect = width / height;
   camera.updateProjectionMatrix();
   renderer.setSize(width, height);
+  renderScene();
 }
 
 window.addEventListener("resize", onResize);
@@ -90,6 +156,13 @@ window.addEventListener("resize", onResize);
 const parallaxElements = document.querySelectorAll("[data-parallax]");
 
 window.addEventListener("scroll", () => {
+  if (prefersReducedMotion.matches) {
+    parallaxElements.forEach((el) => {
+      el.style.transform = "";
+    });
+    return;
+  }
+
   const scrollY = window.scrollY || window.pageYOffset;
   parallaxElements.forEach((el) => {
     const speed = parseFloat(el.getAttribute("data-parallax-speed") || "0.05");

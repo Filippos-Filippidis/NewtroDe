@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+<title id="title">COMPUTATIONAL DESIGN</title><desc id="desc">parametric systems</desc>
+<defs>
+  <radialGradient id="g" cx="25%" cy="15%" r="80%"><stop offset="0" stop-color="#7bada5" stop-opacity="0.55"/><stop offset="0.42" stop-color="#141a1a" stop-opacity="0.9"/><stop offset="1" stop-color="#020202"/></radialGradient>
+  <linearGradient id="l" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.15"/><stop offset="1" stop-color="#7bada5" stop-opacity="0.02"/></linearGradient>
+  <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse"><path d="M 64 0 L 0 0 0 64" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/></pattern>
+</defs>
+<rect width="1200" height="800" fill="url(#g)"/>
+<rect width="1200" height="800" fill="url(#grid)"/>
+<path d="M80 620 C260 420, 420 710, 610 455 S940 280,1120 170" fill="none" stroke="#7bada5" stroke-opacity="0.52" stroke-width="3"/>
+<path d="M130 190 C360 80, 520 310, 710 200 S990 120,1130 360" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="2"/>
+<circle cx="379" cy="127" r="4" fill="#e5e5e5" fill-opacity="0.35"/><circle cx="440" cy="220" r="5" fill="#e5e5e5" fill-opacity="0.35"/><circle cx="501" cy="313" r="6" fill="#e5e5e5" fill-opacity="0.35"/><circle cx="562" cy="406" r="3" fill="#e5e5e5" fill-opacity="0.35"/><circle cx="623" cy="499" r="4" fill="#e5e5e5" fill-opacity="0.35"/><circle cx="684" cy="592" r="5" fill="#e5e5e5" fill-opacity="0.35"/><circle cx="745" cy="165" r="6" fill="#e5e5e5" fill-opacity="0.35"/><circle cx="806" cy="258" r="3" fill="#e5e5e5" fill-opacity="0.35"/><circle cx="867" cy="351" r="4" fill="#e5e5e5" fill-opacity="0.35"/><circle cx="928" cy="444" r="5" fill="#e5e5e5" fill-opacity="0.35"/><circle cx="989" cy="537" r="6" fill="#e5e5e5" fill-opacity="0.35"/><circle cx="1050" cy="630" r="3" fill="#e5e5e5" fill-opacity="0.35"/><circle cx="91" cy="203" r="4" fill="#e5e5e5" fill-opacity="0.35"/><circle cx="152" cy="296" r="5" fill="#e5e5e5" fill-opacity="0.35"/><circle cx="213" cy="389" r="6" fill="#e5e5e5" fill-opacity="0.35"/><circle cx="274" cy="482" r="3" fill="#e5e5e5" fill-opacity="0.35"/><circle cx="335" cy="575" r="4" fill="#e5e5e5" fill-opacity="0.35"/><circle cx="396" cy="148" r="5" fill="#e5e5e5" fill-opacity="0.35"/>
+<rect x="58" y="568" width="760" height="140" rx="22" fill="#000" fill-opacity="0.48" stroke="#ffffff" stroke-opacity="0.10"/>
+<text x="90" y="625" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="5" fill="#ffffff">COMPUTATIONAL DESIGN</text>
+<text x="92" y="668" font-family="Inter, Arial, sans-serif" font-size="24" letter-spacing="2" fill="#e5e5e5" fill-opacity="0.82">parametric systems</text>
+<text x="92" y="705" font-family="Inter, Arial, sans-serif" font-size="14" letter-spacing="4" fill="#7bada5">PLACEHOLDER IMAGE — REPLACE WITH NEWTRO WORK</text>
+</svg>
