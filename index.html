@@ -34,6 +34,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/contact.css">
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -69,7 +70,7 @@
           </div>
           <a href="projects.html">Projects</a>
         </nav>
-        <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        <button class="nav-cta" type="button" data-contact-open>
           Start a project
         </button>
       </div>
@@ -263,8 +264,8 @@
       <section id="contact" class="cta">
         <h2>Start a spatial intelligence project.</h2>
         <p>Tell us what you are trying to understand, design, make or build — and we’ll help define the right workflow.</p>
-        <button class="primary-btn"><a href="mailto:filippos@n3wtro.com">START A PROJECT ENQUIRY</a></button>
-        <p class="cta-note">You can include drawings, photos, scans, project briefs or any existing documentation.</p>
+        <button class="primary-btn" type="button" data-contact-open>START A PROJECT ENQUIRY</button>
+        <p class="cta-note">For drawings, photos, scans or project documents, email <a href="mailto:filippos@n3wtro.com">filippos@n3wtro.com</a>.</p>
       </section>
     </main>
     <footer class="site-footer">
@@ -307,5 +308,6 @@
       if (event.key === "Escape" && aboutModal?.classList.contains("is-open")) closeAboutModal();
     });
   </script>
+  <script src="./JS/contact.js"></script>
 </body>
 </html>

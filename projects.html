@@ -19,6 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/contact.css">
 </head>
 <body>
   <div class="page-container">
@@ -43,7 +44,7 @@
           </div>
           <a href="/projects.html">Projects</a>
         </nav>
-        <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start a project</button>
+        <button class="nav-cta" type="button" data-contact-open>Start a project</button>
       </div>
     </header>
     <div class="floating-social" aria-label="Social media links">
@@ -340,7 +341,7 @@
       <section id="contact" class="cta visual-cta">
         <h2>Have a project to add?</h2>
         <p>Send a short description, images and the capabilities involved. The project library can grow one card at a time.</p>
-        <button class="primary-btn"><a href="mailto:filippos@n3wtro.com">START A PROJECT ENQUIRY</a></button>
+        <button class="primary-btn" type="button" data-contact-open>START A PROJECT ENQUIRY</button>
       </section>
     </main>
     <footer class="site-footer">
@@ -357,5 +358,6 @@
     </footer>
   </div>
   <script src="./JS/projects.js"></script>
+  <script src="./JS/contact.js"></script>
 </body>
 </html>

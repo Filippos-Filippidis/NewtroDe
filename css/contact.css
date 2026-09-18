@@ -1,0 +1,56 @@
+/* Shared enquiry overlay; colours, labels and controls follow the existing modals. */
+.contact-modal {
+  width: min(640px, calc(100vw - 2rem));
+  max-height: calc(100vh - 2rem);
+  max-height: calc(100dvh - 2rem);
+  margin: auto;
+  padding: 2rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid rgba(229, 229, 229, 0.18);
+  background: #050505;
+  color: var(--text-main);
+  font: inherit;
+  color-scheme: dark;
+}
+.contact-modal::backdrop {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+}
+.contact-modal .contact-close { width: 44px; height: 44px; }
+.contact-modal h2 { padding-right: 2.5rem; font-weight: 500; }
+#contact-intro { color: var(--text-soft); margin: 0.6rem 0 1.5rem; }
+.contact-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem; margin-bottom: 1.4rem; }
+.contact-field { min-width: 0; }
+.contact-wide { grid-column: 1 / -1; }
+.contact-field label { display: block; margin-bottom: 0.4rem; font-size: 0.75rem; letter-spacing: 0.14em; color: var(--text-soft); }
+.contact-field input, .contact-field select, .contact-field textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 0.7rem;
+  border: 1px solid rgba(229, 229, 229, 0.3);
+  border-radius: 0;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font: inherit;
+  font-size: 1rem;
+}
+.contact-field textarea { min-height: 8rem; max-height: 40dvh; resize: vertical; }
+.contact-field textarea::placeholder { color: #aaa; opacity: 1; }
+.contact-modal :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.contact-field [aria-invalid="true"] { border-color: #e4aaa3; }
+.contact-error { color: #e4aaa3; font-size: 0.82rem; }
+.contact-error:not(:empty) { margin-top: 0.35rem; }
+.contact-status { margin-top: 1rem; color: var(--text-soft); font-size: 0.9rem; }
+.contact-status:empty { display: none; }
+.contact-direct { margin-top: 1rem; color: var(--text-soft); font-size: 0.82rem; }
+.contact-direct a { text-decoration: underline; text-underline-offset: 0.18em; }
+.contact-modal :disabled { opacity: 0.65; cursor: wait; }
+@media (max-width: 720px) {
+  .contact-modal { padding: 1.5rem; }
+  .contact-fields { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-modal *, .contact-modal { transition: none; scroll-behavior: auto; }
+}
