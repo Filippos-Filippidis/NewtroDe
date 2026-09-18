@@ -41,22 +41,37 @@
       </div>
       <button class="primary-btn" type="submit">SEND ENQUIRY →</button>
     </form>
-    <p class="contact-status" role="status" aria-live="polite" aria-atomic="true"></p>
+    <p class="contact-status" id="contact-status" tabindex="-1" role="status" aria-live="polite" aria-atomic="true"></p>
+    <p class="contact-direct" data-contact-success hidden>We'll be in touch soon.</p>
     <p class="contact-direct">Or email <a href="mailto:filippos@n3wtro.com">filippos@n3wtro.com</a> directly, including any project documents.</p>`;
   document.body.append(dialog);
 
   const form = dialog.querySelector('form');
   const submit = form.querySelector('[type="submit"]');
   const status = dialog.querySelector('.contact-status');
+  const intro = dialog.querySelector('#contact-intro');
+  const successNote = dialog.querySelector('[data-contact-success]');
+  const directEmail = dialog.querySelector('.contact-direct:not([data-contact-success])');
   let opener;
   let previousOverflow;
   let sending = false;
+  let succeeded = false;
 
   document.querySelectorAll('[data-contact-open]').forEach(button => {
     button.setAttribute('aria-haspopup', 'dialog');
     button.setAttribute('aria-controls', dialog.id);
     button.addEventListener('click', () => {
       if (dialog.open) return;
+      if (succeeded) {
+        succeeded = false;
+        form.reset();
+        form.hidden = false;
+        intro.hidden = false;
+        directEmail.hidden = false;
+        successNote.hidden = true;
+        status.textContent = '';
+        dialog.setAttribute('aria-describedby', 'contact-intro');
+      }
       opener = button;
       previousOverflow = document.body.style.overflow;
       dialog.showModal();
@@ -75,10 +90,11 @@
       return;
     }
     if (event.key !== 'Tab') return;
-    const items = [...dialog.querySelectorAll('button:not(:disabled), input:not([tabindex="-1"]), select, textarea, a[href]')];
+    const items = [...dialog.querySelectorAll('button:not(:disabled), input:not([tabindex="-1"]), select, textarea, a[href]')]
+      .filter(item => !item.disabled && item.getClientRects().length > 0);
     const first = items[0];
     const last = items[items.length - 1];
-    if (event.shiftKey && (document.activeElement === first || document.activeElement.id === 'contact-title')) {
+    if (event.shiftKey && (document.activeElement === first || document.activeElement.id === 'contact-title' || document.activeElement === status)) {
       event.preventDefault(); last.focus();
     } else if (!event.shiftKey && document.activeElement === last) {
       event.preventDefault(); first.focus();
@@ -109,7 +125,7 @@
 
   form.addEventListener('submit', async event => {
     event.preventDefault();
-    if (sending) return;
+    if (sending || succeeded) return;
     const data = Object.fromEntries(new FormData(form));
     Object.keys(data).forEach(key => { data[key] = data[key].trim(); });
     const errors = {
@@ -138,7 +154,14 @@
       });
       if (!response.ok || (await response.json()).ok !== true) throw new Error('Submission failed');
       form.reset();
+      succeeded = true;
+      form.hidden = true;
+      intro.hidden = true;
+      directEmail.hidden = true;
+      successNote.hidden = false;
       status.textContent = 'Thanks — your enquiry has been sent.';
+      dialog.setAttribute('aria-describedby', 'contact-status');
+      if (dialog.open) status.focus();
     } catch {
       status.textContent = 'We couldn’t confirm your enquiry was sent. Please try again or email filippos@n3wtro.com.';
     } finally {
