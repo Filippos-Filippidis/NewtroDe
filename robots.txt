@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://n3wtro.com/sitemap.xml
+Sitemap: https://www.n3wtro.com/sitemap.xml
