@@ -1,0 +1,26 @@
+/* Shared typography, navigation, cards, modals and footer come from styles.css.
+   Keep only the approved landing-page composition and integration safeguards here. */
+.reality-capture-page .hero-overlay {
+  display: flex;
+  max-width: none;
+  margin: 0;
+  padding: 0 0 10vh;
+}
+.reality-capture-page :focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.reality-capture-page section[id] { scroll-margin-top: 8rem; }
+@media (max-width: 760px) {
+  /* Let the longer service introduction grow below the shared mobile header. */
+  .reality-capture-page .hero { height: auto; min-height: 100svh; padding-top: 0; }
+  .reality-capture-page .hero-overlay { height: auto; padding: 8rem 0 4rem; }
+  /* These service facts remain visible on the landing page. */
+  .reality-capture-page .hero-meta { display: flex; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reality-capture-page, .reality-capture-page * {
+    scroll-behavior: auto;
+    transition: none;
+  }
+}

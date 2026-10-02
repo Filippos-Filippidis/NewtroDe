@@ -1,0 +1,20 @@
+{
+  "redirects": [
+    {
+      "source": "/reality-capture.html",
+      "destination": "/reality-capture",
+      "permanent": true
+    },
+    {
+      "source": "/reality-capture/",
+      "destination": "/reality-capture",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/reality-capture",
+      "destination": "/reality-capture.html"
+    }
+  ]
+}
